@@ -2,58 +2,89 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>AJMÁ - Catálogo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJMÁ - Regalos personalizados</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 20px;
-    background: #c96a8a;
-    color: white;
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* GALERÍA */
-.galeria {
+nav h1 {
+    color: #c96a8a;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #333;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('img/portada.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3em;
+}
+
+/* SECCION */
+.section {
+    padding: 60px 30px;
+}
+
+/* GALERIA */
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 5px;
-    padding: 5px;
+    gap: 10px;
 }
 
 .item {
     position: relative;
     overflow: hidden;
+    border-radius: 15px;
 }
 
 .item img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
-/* EFECTO HOVER */
+/* OVERLAY */
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .item:hover img {
@@ -64,63 +95,95 @@ header {
     opacity: 1;
 }
 
-.boton {
+/* BOTON */
+.btn {
+    display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
     background: #25D366;
     color: white;
-    text-decoration: none;
     border-radius: 5px;
+    text-decoration: none;
 }
 
+/* WHATSAPP FLOAT */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 15px;
-    background: #eee;
+    padding: 30px;
+    background: #111;
+    color: white;
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
+<nav>
     <h1>AJMÁ</h1>
-    <p>Obsequios personalizados tejidos a mano</p>
-</header>
-
-<div class="galeria">
-
-    <div class="item">
-        <img src="img/producto1.jpg">
-        <div class="overlay">
-            <h3>Amigurumi</h3>
-            <p>Personalizado</p>
-            <a class="boton" href="https://wa.me/593987987190">Comprar</a>
-        </div>
+    <div>
+        <a href="#">Inicio</a>
+        <a href="#">Catálogo</a>
+        <a href="#">Contacto</a>
     </div>
+</nav>
 
-    <div class="item">
-        <img src="img/producto2.jpg">
-        <div class="overlay">
-            <h3>Llaveros</h3>
-            <p>Desde $5</p>
-            <a class="boton" href="https://wa.me/593987987190">Comprar</a>
-        </div>
+<section class="hero">
+    <div>
+        <h2>Detalles únicos tejidos a mano</h2>
+        <p>Regalos personalizados con amor 💖</p>
     </div>
+</section>
 
-    <div class="item">
-        <img src="img/producto3.jpg">
-        <div class="overlay">
-            <h3>Regalos tejidos</h3>
-            <p>A pedido</p>
-            <a class="boton" href="https://wa.me/593987987190">Comprar</a>
+<section class="section">
+    <h2>Catálogo</h2>
+
+    <div class="grid">
+
+        <div class="item">
+            <img src="img/producto1.jpg">
+            <div class="overlay">
+                <h3>Amigurumi personalizado</h3>
+                <a class="btn" href="https://wa.me/593987987190?text=Hola quiero este amigurumi">Comprar</a>
+            </div>
         </div>
-    </div>
 
-</div>
+        <div class="item">
+            <img src="img/producto2.jpg">
+            <div class="overlay">
+                <h3>Llavero tejido</h3>
+                <a class="btn" href="https://wa.me/593987987190?text=Hola quiero este llavero">Comprar</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="img/producto3.jpg">
+            <div class="overlay">
+                <h3>Regalo personalizado</h3>
+                <a class="btn" href="https://wa.me/593987987190?text=Hola quiero este producto">Comprar</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/593987987190">💬</a>
 
 <footer>
+    <h3>AJMÁ</h3>
+    <p>Obsequios personalizados hechos a mano</p>
     <p>📞 +593 98 798 7190</p>
 </footer>
 
